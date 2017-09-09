@@ -1,0 +1,27 @@
+{
+  "name": "@resindev/preach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "1.18.0",
+    "express": "4.15.4",
+    "express-graphql": "0.6.11",
+    "gatsby-source-filesystem": "1.4.12",
+    "gatsby-transformer-remark": "1.7.7",
+    "graphql": "0.11.3",
+    "graphql-client": "^2.0.0",
+    "graphql-skip-limit": "1.0.5",
+    "memory-fs": "0.4.1",
+    "next": "3.2.2",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node --preserve-symlinks app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
