@@ -1,10 +1,12 @@
 ---
 title: Post 2
 category: post
+slug: /post/post2
+component: /post
 ---
 
-# Hello world!
+# Test this is post 2
 
-this is some more content
+Not much to say yo!
 
-hmmpf
+wad uP!

@@ -12,9 +12,17 @@ var _asyncToGenerator2 = require('next/node_modules/babel-runtime/helpers/asyncT
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
+var _objectWithoutProperties2 = require('next/node_modules/babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _post = require('./post');
+
+var _post2 = _interopRequireDefault(_post);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22,34 +30,44 @@ var _jsxFileName = '/Users/gaudi/work/preach/pages/index.js?entry',
     _this = undefined;
 
 var Page = function Page(_ref) {
-  var data = _ref.data;
+  var allMarkdownRemark = _ref.allMarkdownRemark,
+      props = (0, _objectWithoutProperties3.default)(_ref, ['allMarkdownRemark']);
+
   return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 2
+      lineNumber: 5
     }
-  }, 'Hello', data.markdownRemark.html);
+  }, allMarkdownRemark.edges.map(function (edge) {
+    return _react2.default.createElement(_post2.default, { key: edge.node.frontmatter.slug, html: edge.node.html, title: edge.node.frontmatter.title, slug: edge.node.frontmatter.slug, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      }
+    });
+  }));
 };
 
 Page.getInitialProps = function () {
   var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(_ref2) {
     var req = _ref2.req;
-    var gql, data;
+
+    var isServer, gql, _ref4, data;
+
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            gql = require('graphql-client')({
-              url: 'http://localhost:3000/graphql'
-            });
-            _context.next = 3;
-            return gql.query('\n    {\n      markdownRemark {\n        html\n      }\n    }\n  ');
+            isServer = typeof window === 'undefined';
+            gql = require('../lib/client');
+            _context.next = 4;
+            return gql.query('{\n    allMarkdownRemark {\n      edges {\n        node {\n          frontmatter {\n            title\n            slug\n          }\n          html\n        }\n      }\n    }\n  }');
 
-          case 3:
-            data = _context.sent;
-            return _context.abrupt('return', data);
+          case 4:
+            _ref4 = _context.sent;
+            data = _ref4.data;
+            return _context.abrupt('return', isServer ? data : null);
 
-          case 5:
+          case 7:
           case 'end':
             return _context.stop();
         }
@@ -63,4 +81,4 @@ Page.getInitialProps = function () {
 }();
 
 exports.default = Page;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIlBhZ2UiLCJkYXRhIiwibWFya2Rvd25SZW1hcmsiLCJodG1sIiwiZ2V0SW5pdGlhbFByb3BzIiwicmVxIiwiZ3FsIiwicmVxdWlyZSIsInVybCIsInF1ZXJ5Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLElBQU0sT0FBTyxTQUFQLEFBQU8sV0FBQTtNQUFBLEFBQUcsWUFBSCxBQUFHO3lCQUNkLGNBQUE7O2dCQUFBO2tCQUFBO0FBQUE7QUFBQSxHQUFBLEVBRUcsY0FBQSxBQUFLLGVBSEcsQUFDWCxBQUV1QjtBQUh6Qjs7QUFNQSxLQUFBLEFBQUssOEJBQUw7dUZBQXVCLHdCQUFBO1FBQUEsQUFBUyxZQUFULEFBQVM7YUFBVDtrRUFBQTtnQkFBQTt5Q0FBQTtlQUNmO0FBRGU7bUJBQUEsQUFDVCxBQUEwQixBQUMvQjtBQUQrQixBQUNwQyxhQURVOzRCQURTO21CQUlGLElBQUEsQUFBSSxNQUpGOztlQUlmO0FBSmUsNEJBQUE7NkNBQUEsQUFXZDs7ZUFYYztlQUFBOzRCQUFBOztBQUFBO2dCQUFBO0FBQXZCOzt1QkFBQTs2QkFBQTtBQUFBO0FBY0E7O2tCQUFBLEFBQWUiLCJmaWxlIjoiaW5kZXguanM/ZW50cnkiLCJzb3VyY2VSb290IjoiL1VzZXJzL2dhdWRpL3dvcmsvcHJlYWNoIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIlBvc3QiLCJQYWdlIiwiYWxsTWFya2Rvd25SZW1hcmsiLCJwcm9wcyIsImVkZ2VzIiwibWFwIiwiZWRnZSIsIm5vZGUiLCJmcm9udG1hdHRlciIsInNsdWciLCJodG1sIiwidGl0bGUiLCJnZXRJbml0aWFsUHJvcHMiLCJyZXEiLCJpc1NlcnZlciIsIndpbmRvdyIsImdxbCIsInJlcXVpcmUiLCJxdWVyeSIsImRhdGEiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPOzs7Ozs7Ozs7QUFFUCxJQUFNLE9BQU8sU0FBUCxBQUFPLFdBQXFDO01BQWxDLEFBQWtDLHlCQUFsQyxBQUFrQztNQUFaLEFBQVksc0RBQ2hEOzt5QkFDRSxjQUFBOztnQkFBQTtrQkFBQSxBQUVJO0FBRko7QUFBQSxHQUFBLG9CQUVJLEFBQWtCLE1BQWxCLEFBQXdCLElBQUksZ0JBQVEsQUFDbEM7MkJBQVEsQUFBQyxnQ0FBSyxLQUFLLEtBQUEsQUFBSyxLQUFMLEFBQVUsWUFBckIsQUFBaUMsTUFBTSxNQUFNLEtBQUEsQUFBSyxLQUFsRCxBQUF1RCxNQUFNLE9BQU8sS0FBQSxBQUFLLEtBQUwsQUFBVSxZQUE5RSxBQUEwRixPQUFPLE1BQU0sS0FBQSxBQUFLLEtBQUwsQUFBVSxZQUFqSCxBQUE2SDtrQkFBN0g7b0JBQVIsQUFBUSxBQUNUO0FBRFM7S0FBQTtBQUpoQixBQUNFLEFBRUksQUFNUDtBQVZEOztBQWFBLEtBQUEsQUFBSyw4QkFBTDt1RkFBdUIsd0JBQUE7UUFBQSxBQUFTLFlBQVQsQUFBUzs7OEJBQVQ7O2tFQUFBO2dCQUFBO3lDQUFBO2VBQ2Y7QUFEZSx1QkFDSixPQUFBLEFBQU8sV0FESCxBQUNjLEFBQzdCO0FBRmUsa0JBQUEsQUFFVDs0QkFGUzttQkFJRSxJQUFBLEFBQUksTUFKTjs7ZUFBQTs2QkFJYjtBQUphLHlCQUFBLEFBSWI7NkNBY0QsV0FBQSxBQUFXLE9BbEJHLEFBa0JJOztlQWxCSjtlQUFBOzRCQUFBOztBQUFBO2dCQUFBO0FBQXZCOzt1QkFBQTs2QkFBQTtBQUFBO0FBcUJBOztrQkFBQSxBQUFlIiwiZmlsZSI6ImluZGV4LmpzP2VudHJ5Iiwic291cmNlUm9vdCI6Ii9Vc2Vycy9nYXVkaS93b3JrL3ByZWFjaCJ9

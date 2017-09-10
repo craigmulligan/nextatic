@@ -1,3 +1,10 @@
+# preach
+out
+public
+.cache
+.next
+
+
 # Logs
 logs
 *.log
