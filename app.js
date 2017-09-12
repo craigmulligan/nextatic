@@ -8,10 +8,12 @@ const bootstrap = require(`gatsby-data/dist/bootstrap`);
 const server = require('express')()
 const { parse } = require('url')
 const next = require('next')
+const gql = require('./lib/client')
+
+const IgnorePlugin = require('webpack').IgnorePlugin
 
 const getPages = async () => {
-  const gql = require('./lib/client')
-  const { data } = await gql.query(`{
+  const { data } = await gql(`{
     allMarkdownRemark {
       edges {
         node {
@@ -29,7 +31,7 @@ const getPages = async () => {
 
 const dev = process.env.NODE_ENV !== 'production'
 const conf = {
-  exportPathMap: async () => {
+  exportPathMap: () => {
     return [ { slug: '/post/post1', component: '/post' },
   { slug: '/post/post2', component: '/post' } ]
   }
@@ -85,7 +87,7 @@ const { buildSchema, GraphQLSchema, GraphQLObjectType  } = require('graphql');
       // This tells it to parse the query portion of the URL.
       const parsedUrl = parse(req.url, true)
       const { pathname, query } = parsedUrl
-
+      // console.log(pages)
       const page = pages.find(p => p.slug === pathname)
       if (page) {
         const queryParams = { slug: page.slug }

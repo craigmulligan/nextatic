@@ -1,50 +1,5 @@
 {
   "nodes": {
-    "/Users/gaudi/work/preach/content/test.md absPath of file": {
-      "id": "/Users/gaudi/work/preach/content/test.md absPath of file",
-      "children": [
-        "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark"
-      ],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "58ffc97a33ef01ac1b55fc6c3a12e61e",
-        "mediaType": "text/markdown",
-        "type": "File",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "content",
-      "absolutePath": "/Users/gaudi/work/preach/content/test.md",
-      "relativePath": "test.md",
-      "extension": "md",
-      "size": 126,
-      "prettySize": "126 B",
-      "modifiedTime": "2017-09-09T23:18:20.000Z",
-      "accessTime": "2017-09-09T23:47:59.000Z",
-      "changeTime": "2017-09-09T23:18:20.000Z",
-      "birthTime": "2017-09-09T13:26:47.000Z",
-      "root": "/",
-      "dir": "/Users/gaudi/work/preach/content",
-      "base": "test.md",
-      "ext": ".md",
-      "name": "test",
-      "dev": 16777221,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4096,
-      "ino": 66099155,
-      "blocks": 8,
-      "atimeMs": 1505000879000,
-      "mtimeMs": 1504999100000,
-      "ctimeMs": 1504999100000,
-      "birthtimeMs": 1504963607000,
-      "atime": "2017-09-09T23:47:59.000Z",
-      "mtime": "2017-09-09T23:18:20.000Z",
-      "ctime": "2017-09-09T23:18:20.000Z",
-      "birthtime": "2017-09-09T13:26:47.000Z"
-    },
     "/Users/gaudi/work/preach/content/post2.md absPath of file": {
       "id": "/Users/gaudi/work/preach/content/post2.md absPath of file",
       "children": [
@@ -64,7 +19,7 @@
       "size": 125,
       "prettySize": "125 B",
       "modifiedTime": "2017-09-09T23:18:17.000Z",
-      "accessTime": "2017-09-09T23:47:59.000Z",
+      "accessTime": "2017-09-12T20:28:20.000Z",
       "changeTime": "2017-09-09T23:18:17.000Z",
       "birthTime": "2017-09-09T16:08:00.000Z",
       "root": "/",
@@ -81,33 +36,59 @@
       "blksize": 4096,
       "ino": 66295117,
       "blocks": 8,
-      "atimeMs": 1505000879000,
+      "atimeMs": 1505248100000,
       "mtimeMs": 1504999097000,
       "ctimeMs": 1504999097000,
       "birthtimeMs": 1504973280000,
-      "atime": "2017-09-09T23:47:59.000Z",
+      "atime": "2017-09-12T20:28:20.000Z",
       "mtime": "2017-09-09T23:18:17.000Z",
       "ctime": "2017-09-09T23:18:17.000Z",
       "birthtime": "2017-09-09T16:08:00.000Z"
     },
-    "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark": {
-      "id": "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark",
-      "children": [],
-      "parent": "/Users/gaudi/work/preach/content/test.md absPath of file",
+    "/Users/gaudi/work/preach/content/test.md absPath of file": {
+      "id": "/Users/gaudi/work/preach/content/test.md absPath of file",
+      "children": [
+        "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
       "internal": {
-        "content": "---\ntitle: First Post\ncategory: post\nslug: /post/post1\ncomponent: /post\n---\n\n# Hello world!\n\nthis is some more content\n\nhmmpf\n",
-        "contentDigest": "bcaaa9e86e10ded0c3de633b6610b6fa",
-        "type": "MarkdownRemark",
-        "owner": "gatsby-transformer-remark"
+        "contentDigest": "58ffc97a33ef01ac1b55fc6c3a12e61e",
+        "mediaType": "text/markdown",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
       },
-      "frontmatter": {
-        "title": "First Post",
-        "category": "post",
-        "slug": "/post/post1",
-        "component": "/post",
-        "parent": "/Users/gaudi/work/preach/content/test.md absPath of file"
-      },
-      "fileAbsolutePath": "/Users/gaudi/work/preach/content/test.md"
+      "sourceInstanceName": "content",
+      "absolutePath": "/Users/gaudi/work/preach/content/test.md",
+      "relativePath": "test.md",
+      "extension": "md",
+      "size": 126,
+      "prettySize": "126 B",
+      "modifiedTime": "2017-09-09T23:18:20.000Z",
+      "accessTime": "2017-09-12T20:28:20.000Z",
+      "changeTime": "2017-09-09T23:18:20.000Z",
+      "birthTime": "2017-09-09T13:26:47.000Z",
+      "root": "/",
+      "dir": "/Users/gaudi/work/preach/content",
+      "base": "test.md",
+      "ext": ".md",
+      "name": "test",
+      "dev": 16777221,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 66099155,
+      "blocks": 8,
+      "atimeMs": 1505248100000,
+      "mtimeMs": 1504999100000,
+      "ctimeMs": 1504999100000,
+      "birthtimeMs": 1504963607000,
+      "atime": "2017-09-12T20:28:20.000Z",
+      "mtime": "2017-09-09T23:18:20.000Z",
+      "ctime": "2017-09-09T23:18:20.000Z",
+      "birthtime": "2017-09-09T13:26:47.000Z"
     },
     "/Users/gaudi/work/preach/content/post2.md absPath of file >>> MarkdownRemark": {
       "id": "/Users/gaudi/work/preach/content/post2.md absPath of file >>> MarkdownRemark",
@@ -127,18 +108,37 @@
         "parent": "/Users/gaudi/work/preach/content/post2.md absPath of file"
       },
       "fileAbsolutePath": "/Users/gaudi/work/preach/content/post2.md"
+    },
+    "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/gaudi/work/preach/content/test.md absPath of file",
+      "internal": {
+        "content": "---\ntitle: First Post\ncategory: post\nslug: /post/post1\ncomponent: /post\n---\n\n# Hello world!\n\nthis is some more content\n\nhmmpf\n",
+        "contentDigest": "bcaaa9e86e10ded0c3de633b6610b6fa",
+        "type": "MarkdownRemark",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "First Post",
+        "category": "post",
+        "slug": "/post/post1",
+        "component": "/post",
+        "parent": "/Users/gaudi/work/preach/content/test.md absPath of file"
+      },
+      "fileAbsolutePath": "/Users/gaudi/work/preach/content/test.md"
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "2c9b19995f49871319a309d5f325e7fe"
+    "PLUGINS_HASH": "c708b39a45d427608f4842dbfa7b85e5"
   },
   "componentDataDependencies": {
     "nodes": {
-      "/Users/gaudi/work/preach/content/post2.md absPath of file >>> MarkdownRemark": [
+      "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark": [
         "/"
       ],
-      "/Users/gaudi/work/preach/content/test.md absPath of file >>> MarkdownRemark": [
+      "/Users/gaudi/work/preach/content/post2.md absPath of file >>> MarkdownRemark": [
         "/"
       ]
     },

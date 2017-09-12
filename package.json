@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bluebird": "3.5.0",
     "body-parser": "1.18.0",
     "express": "4.15.4",
     "express-graphql": "0.6.11",
@@ -12,12 +13,19 @@
     "graphql": "0.11.3",
     "graphql-client": "^2.0.0",
     "graphql-skip-limit": "1.0.5",
+    "md5": "2.2.1",
     "memory-fs": "0.4.1",
+    "mkdirp": "^0.5.1",
+    "mkdirp-then": "^1.2.0",
     "next": "3.2.2",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
   "devDependencies": {},
+  "browser": {
+    "fs": false,
+    "mkdirp-then": false
+  },
   "scripts": {
     "start": "node --preserve-symlinks app.js",
     "build": "next build",

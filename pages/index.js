@@ -1,23 +1,24 @@
-import Post from './post'
+import Post from '../components/post'
+import Layout from './_Layout'
+import isServer from '../lib/isServer'
 
 const Page = ({ allMarkdownRemark, ...props }) => {
   return (
-    <div>
+    <Layout>
       {
         allMarkdownRemark.edges.map(edge => {
           return (<Post key={edge.node.frontmatter.slug} html={edge.node.html} title={edge.node.frontmatter.title} slug={edge.node.frontmatter.slug}/>)
         })
       }
-    </div>
+    </Layout>
   )
 }
 
 
-Page.getInitialProps = async ({ req }) => {
-  const isServer = typeof window === 'undefined'
+Page.getInitialProps = async (props) => {
   const gql = require('../lib/client')
 
-  const { data } = await gql.query(`{
+  const { data } = await gql(`{
     allMarkdownRemark {
       edges {
         node {
@@ -31,7 +32,7 @@ Page.getInitialProps = async ({ req }) => {
     }
   }`)
 
-  return isServer ? data : null;
+  return data;
 }
 
 export default Page
