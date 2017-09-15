@@ -13,7 +13,6 @@ const Post = ({ title, html, slug }) => {
 }
 
 Post.getInitialProps = async ({ query, jsonPageRes }) => {
-  const isServer = typeof window === 'undefined'
   const gql = require('../lib/client')
   const { data } = await gql(`{
     markdownRemark(frontmatter: {slug: {eq: "${query.slug}"}}) {

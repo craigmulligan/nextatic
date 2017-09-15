@@ -1,6 +1,5 @@
 import Post from '../components/post'
 import Layout from './_Layout'
-import isServer from '../lib/isServer'
 
 const Page = ({ allMarkdownRemark, ...props }) => {
   return (
