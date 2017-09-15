@@ -28,7 +28,14 @@ const nextatic = require(`./lib`);
 
   const conf = {
     schema: store.getState().schema,
-    dir: '.'
+    dir: '.',
+    webpackDevMiddleware: config => {
+      console.log('config', config)
+      // Perform customizations to webpack dev middleware config
+
+      // Important: return the modified config
+      return config;
+    }
   }
 
   // launch server

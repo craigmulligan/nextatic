@@ -4,9 +4,11 @@ import Link from 'next/link'
 const Post = ({ title, html, slug }) => {
   return (
     <Layout>
-      <Link prefetch as={slug} href={`/post/?slug=${slug}`}>
-        <h1>{title}</h1>
-      </Link>
+      <div>
+        <Link prefetch as={slug} href={`/post?slug=${slug}`}>
+          <a>{title}</a>
+        </Link>
+      </div>
       <p dangerouslySetInnerHTML={{__html: html}}/>
     </Layout>
   )

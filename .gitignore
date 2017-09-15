@@ -4,7 +4,6 @@ public
 .cache
 .next
 
-
 # Logs
 logs
 *.log
