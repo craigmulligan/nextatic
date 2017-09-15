@@ -9,7 +9,7 @@ const nextatic = require(`./lib`);
     directory: process.cwd(),
     config: {
       siteMetadata: {
-        title: `Gatsby Redux`,
+        title: `Nextatic`,
       },
       plugins: [
         {
@@ -28,14 +28,7 @@ const nextatic = require(`./lib`);
 
   const conf = {
     schema: store.getState().schema,
-    dir: '.',
-    webpackDevMiddleware: config => {
-      console.log('config', config)
-      // Perform customizations to webpack dev middleware config
-
-      // Important: return the modified config
-      return config;
-    }
+    dir: '.'
   }
 
   // launch server
