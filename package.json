@@ -21,7 +21,9 @@
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "debug": "3.0.1"
+  },
   "browser": {
     "fs": false,
     "mkdirp-then": false

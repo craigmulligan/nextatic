@@ -2,7 +2,7 @@
 
 const { store } = require('gatsby-data/dist/redux');
 const bootstrap = require(`gatsby-data/dist/bootstrap`);
-const nextStatic = require(`./lib`);
+const nextatic = require(`./lib`);
 
 (async() => {
   await bootstrap({
@@ -27,11 +27,10 @@ const nextStatic = require(`./lib`);
   });
 
   const conf = {
-    exportPathMap: async () => await getPages(),
     schema: store.getState().schema,
     dir: '.'
   }
 
   // launch server
-  nextStatic(conf);
+  nextatic(conf);
 })()
