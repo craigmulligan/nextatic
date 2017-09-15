@@ -1,5 +1,5 @@
 {
-  "name": "@resindev/preach",
+  "name": "nextatic",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -34,6 +34,6 @@
     "export": "next export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "craig-mulligan",
   "license": "ISC"
 }
