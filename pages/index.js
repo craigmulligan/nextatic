@@ -2,16 +2,16 @@ import Post from '../components/post'
 import Layout from './_Layout'
 import Link from 'next/link'
 
-const Page = ({ allMarkdownRemark, ...props }) => {
+const Page = ({ Posts, ...props }) => {
   return (
     <Layout>
       {
-        allMarkdownRemark.edges.map((edge, i) => {
+        Posts.map((post, i) => {
           return (
             <div key={i}>
               <Link
-                as={`${edge.node.frontmatter.slug}`}
-                href={`/post?slug=${edge.node.frontmatter.slug}`}
+                as={`${post.slug}`}
+                href={`/post?slug=${post.slug}`}
                 >
                 <a>{edge.node.frontmatter.title}</a>
               </Link>
@@ -24,23 +24,18 @@ const Page = ({ allMarkdownRemark, ...props }) => {
 }
 
 
-Page.getInitialProps = async (props) => {
+Page.getInitialProps = async ({ asPath }) => {
   const gql = require('../lib/client')
 
-  const { data } = await gql(`{
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            slug
-          }
-          html
-        }
-      }
+  const data = await gql(`{
+    Posts {
+      title
+      body
+      slug
     }
   }`)
 
+  console.log(data)
   return data;
 }
 

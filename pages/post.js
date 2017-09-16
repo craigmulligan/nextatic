@@ -14,22 +14,24 @@ const Post = ({ title, html, slug }) => {
   )
 }
 
-Post.getInitialProps = async ({ query, jsonPageRes }) => {
+Post.getInitialProps = async ({asPath}) => {
+  // console.log(ctx)
   const gql = require('../lib/client')
   const { data } = await gql(`{
-    markdownRemark(frontmatter: {slug: {eq: "${query.slug}"}}) {
-      frontmatter {
-        title
-        slug
-      }
-      html
+    Posts(slug: "${asPath}") {
+      title
+      slug
+      body
     }
   }`)
 
+  console.log(data)
+  debugger
+
   return {
-    title: data.markdownRemark.frontmatter.title,
-    html: data.markdownRemark.html,
-    slug: data.markdownRemark.frontmatter.slug || '/'
+    title: data.Posts.title,
+    html: data.Posts.body,
+    slug: data.Posts.slug || '/'
   }
 }
 
