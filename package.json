@@ -3,23 +3,32 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "nextatic": "./lib/cli.js"
+  },
   "dependencies": {
     "bluebird": "3.5.0",
     "body-parser": "1.18.0",
+    "capitano": "1.7.4",
     "express": "4.15.4",
     "express-graphql": "0.6.11",
     "graphql": "0.11.3",
     "graphql-client": "^2.0.0",
     "md5": "2.2.1",
-    "memory-fs": "0.4.1",
-    "mkdirp": "^0.5.1",
     "mkdirp-then": "^1.2.0",
     "next": "3.2.2",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
+  "peerDependencies": {
+    "graphql": "0.11.3",
+    "next": "3.2.2",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
+  },
   "devDependencies": {
-    "debug": "3.0.1"
+    "debug": "3.0.1",
+    "prettier": "1.7.0"
   },
   "browser": {
     "fs": false,
@@ -29,7 +38,8 @@
     "start": "node app.js",
     "build": "next build",
     "export": "next export",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --single-quote --semi false --write 'lib/*.js'"
   },
   "author": "craig-mulligan",
   "license": "ISC"

@@ -4,7 +4,8 @@ const {
   GraphQLInt,
   GraphQLString,
   GraphQLNonNull,
-  GraphQLScalarType
+  GraphQLScalarType,
+  GraphQLList
 } = require('graphql');
 
 const posts = [
@@ -40,27 +41,33 @@ const PostType = new GraphQLObjectType({
 
 const Posts = {
   // figure out union type
-  type: PostType,
-    args: {
-      slug: {
-        name: 'slug',
-        type: GraphQLString
-      }
-    },
-    resolve(root, { slug }) {
-      if (slug) {
-        return posts.find(post => post.slug === slug);
-      } else {
-        return posts
-      }
+  type: new GraphQLList(PostType),
+  resolve(root) {
+    return posts;
+  }
+}
 
+const Post = {
+  // figure out union type
+  type: PostType,
+  args: {
+    slug: {
+      name: 'slug',
+      type: GraphQLString
     }
+  },
+  resolve(root, { slug }) {
+    return posts.find(post => post.slug === slug);
+  }
 }
 
 let schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'RootQueryType',
-    fields: { Posts }
+    fields: {
+      posts: Posts,
+      post: Post
+    }
   })
 });
 

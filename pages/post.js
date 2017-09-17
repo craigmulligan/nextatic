@@ -1,7 +1,7 @@
 import Layout from './_Layout'
 import Link from 'next/link'
 
-const Post = ({ title, html, slug }) => {
+const Post = ({ title, body, slug }) => {
   return (
     <Layout>
       <div>
@@ -9,30 +9,22 @@ const Post = ({ title, html, slug }) => {
           <a>{title}</a>
         </Link>
       </div>
-      <p dangerouslySetInnerHTML={{__html: html}}/>
+      <p dangerouslySetInnerHTML={{__html: body}}/>
     </Layout>
   )
 }
 
-Post.getInitialProps = async ({asPath}) => {
-  // console.log(ctx)
+Post.getInitialProps = async ({ asPath }) => {
   const gql = require('../lib/client')
   const { data } = await gql(`{
-    Posts(slug: "${asPath}") {
+    post(slug: "${asPath.replace(/\/$/, '')}") {
       title
       slug
       body
     }
   }`)
 
-  console.log(data)
-  debugger
-
-  return {
-    title: data.Posts.title,
-    html: data.Posts.body,
-    slug: data.Posts.slug || '/'
-  }
+  return data.post;
 }
 
 export default Post

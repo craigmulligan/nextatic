@@ -2,18 +2,18 @@ import Post from '../components/post'
 import Layout from './_Layout'
 import Link from 'next/link'
 
-const Page = ({ Posts, ...props }) => {
+const Page = ({ posts, ...props }) => {
   return (
     <Layout>
       {
-        Posts.map((post, i) => {
+        posts.map((post, i) => {
           return (
             <div key={i}>
               <Link
                 as={`${post.slug}`}
                 href={`/post?slug=${post.slug}`}
                 >
-                <a>{edge.node.frontmatter.title}</a>
+                <a>{post.title}</a>
               </Link>
             </div>
           )
@@ -24,18 +24,17 @@ const Page = ({ Posts, ...props }) => {
 }
 
 
-Page.getInitialProps = async ({ asPath }) => {
+Page.getInitialProps = async ({ pathname }) => {
   const gql = require('../lib/client')
 
-  const data = await gql(`{
-    Posts {
+  const { data } = await gql(`{
+    posts {
       title
       body
       slug
     }
   }`)
 
-  console.log(data)
   return data;
 }
 
