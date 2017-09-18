@@ -2,7 +2,7 @@
   "name": "nextatic",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "bin": {
     "nextatic": "./lib/cli.js"
   },
