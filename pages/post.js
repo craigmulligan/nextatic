@@ -5,7 +5,6 @@ const Post = ({ title, body, slug }) => {
   return (
     <Layout>
       <div>
-        <h1>HIII</h1>
         <Link prefetch as={slug} href={`/post?slug=${slug}`}>
           <a>{title}</a>
         </Link>
