@@ -4,7 +4,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 require("babel-polyfill");
 var PORT = process.env.PORT || 3000;
-var graphqlHTTP = require('express-graphql');
+var graphqlHTTP = require(`express-graphql`);
 var server = require('express')();
 var next = require('next');
 var exportPathMapDefault = require('./exportPathMap');
@@ -36,7 +36,7 @@ var bootstrap = function () {
             });
 
 
-            server.use('/graphql', graphqlHTTP({
+            server.use(`/graphql`, graphqlHTTP({
               schema: conf.get('schema'),
               graphiql: true
             }));
@@ -60,9 +60,9 @@ var bootstrap = function () {
             });
 
             return _context.abrupt('return', {
-              server: server,
-              nextApp: nextApp,
-              pages: pages
+              server,
+              nextApp,
+              pages
             });
 
           case 9:

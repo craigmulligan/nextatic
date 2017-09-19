@@ -12,7 +12,11 @@ var exportPathMap = function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return gql('{\n    posts {\n      slug\n    }\n  }');
+            return gql(`{
+    posts {
+      slug
+    }
+  }`);
 
           case 2:
             _ref2 = _context.sent;

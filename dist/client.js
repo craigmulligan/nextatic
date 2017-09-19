@@ -20,14 +20,14 @@ module.exports = function (query) {
 
   if (isServer() && isExport()) {
     var conf = require('./config').store();
-    var dataDir = conf.dir + '/' + conf.outdir + '/data/';
+    var dataDir = `${conf.dir}/${conf.outdir}/data/`;
     var writeFile = Promise.promisify(require('fs').writeFile);
     return mkdirp(dataDir).then(function (_) {
       return gql({
         url: 'http://localhost:3000/graphql'
       }).query(query);
     }).then(function (data) {
-      return writeFile(dataDir + '/' + hash + '.json', JSON.stringify(data)).then(function (_) {
+      return writeFile(`${dataDir}/${hash}.json`, JSON.stringify(data)).then(function (_) {
         return data;
       });
     });
@@ -36,7 +36,7 @@ module.exports = function (query) {
   // exported client
   // fetch json by query hash
   if (!isServer() && isExport()) {
-    return fetch('/data/' + hash + '.json').then(function (res) {
+    return fetch(`/data/${hash}.json`).then(function (res) {
       return res.json();
     });
   }

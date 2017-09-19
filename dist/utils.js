@@ -19,7 +19,7 @@ var isExport = function isExport() {
 };
 
 module.exports = {
-  isServer: isServer,
-  isExport: isExport,
-  buildId: buildId
+  isServer,
+  isExport,
+  buildId
 };
