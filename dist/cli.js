@@ -51,12 +51,12 @@ capitano.command({
             case 0:
               _context.prev = 0;
 
-              console.log('exporting');
+              console.log('exporting!');
               _context.next = 4;
               return nextatic.export();
 
             case 4:
-              console.log('success');
+              console.log('success!');
               process.exit(0);
               _context.next = 11;
               break;
