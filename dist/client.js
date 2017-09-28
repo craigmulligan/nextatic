@@ -19,7 +19,7 @@ module.exports = function (query) {
   var hash = md5(query);
 
   if (isServer() && isExport()) {
-    var conf = require('./config').store();
+    var conf = require('./conf').store();
     var dataDir = `${conf.dir}/${conf.outdir}/data/`;
     var writeFile = Promise.promisify(require('fs').writeFile);
     return mkdirp(dataDir).then(function (_) {

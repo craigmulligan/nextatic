@@ -8,7 +8,7 @@ var graphqlHTTP = require(`express-graphql`);
 var server = require('express')();
 var next = require('next');
 var exportPathMapDefault = require('./exportPathMap');
-var conf = require('./config');
+var conf = require('./conf');
 var nextBuild = require('next/dist/server/build');
 var nextExport = require('next/dist/server/export');
 
