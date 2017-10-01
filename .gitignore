@@ -3,6 +3,7 @@ out
 public
 .cache
 .next
+dist
 
 # Logs
 logs
