@@ -1,7 +1,7 @@
 {
   "name": "nextatic",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Grapqhl wrapper for next.js static sites",
   "main": "dist/index.js",
   "bin": {
     "nextatic": "./dist/cli.js"
