@@ -38,7 +38,7 @@
     "build": "babel lib --out-dir dist --copy-files && cp -a ./dist/. /Users/gaudi/work/nextatic-example/node_modules/nextatic/dist",
     "watch": "babel -w lib --out-dir dist --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --single-quote --semi false --write 'lib/*.js'"
+    "prettier": "prettier --single-quote --semi false --write 'lib/**/*.js'"
   },
   "author": "craig-mulligan",
   "license": "ISC"
