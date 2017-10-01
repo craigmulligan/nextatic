@@ -1,6 +1,6 @@
 {
   "name": "nextatic",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Grapqhl wrapper for next.js static sites",
   "main": "dist/index.js",
   "bin": {
@@ -10,30 +10,33 @@
     "babel-polyfill": "6.26.0",
     "bluebird": "3.5.0",
     "capitano": "1.7.4",
-    "express": "4.15.4",
+    "express": "4.16.1",
     "express-graphql": "0.6.11",
-    "graphql": "^0.11.3",
+    "graphql": "0.11.6",
     "graphql-client": "^2.0.0",
     "md5": "2.2.1",
-    "mkdirp-then": "^1.2.0"
+    "mkdirp-then": "^1.2.0",
+    "next": "4.0.0-beta.2",
+    "react": "16.0.0",
+    "react-dom": "16.0.0"
   },
   "peerDependencies": {
     "next": "^4.0.0-beta.1",
-    "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "react": "16.0.0",
+    "react-dom": "16.0.0"
   },
   "devDependencies": {
-    "debug": "3.0.1",
-    "prettier": "1.7.0"
+    "babel-preset-env": "1.6.0",
+    "debug": "3.1.0",
+    "prettier": "1.7.3"
   },
   "browser": {
     "fs": false,
     "mkdirp-then": false
   },
   "scripts": {
-    "start": "node app.js",
-    "export": "next export",
-    "build": "babel lib --out-dir dist --copy-files",
+    "build": "babel lib --out-dir dist --copy-files && cp -a ./dist/. /Users/gaudi/work/nextatic-example/node_modules/nextatic/dist",
+    "watch": "babel -w lib --out-dir dist --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --single-quote --semi false --write 'lib/*.js'"
   },
